@@ -1,0 +1,43 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    MC_HOME: /minecraft
+    MC_DATA: /minecraft-data
+    EULA: no
+  tasks:
+    - name: set facts
+      set_fact:
+        MC_TYPE: "{{ lookup('env', 'MC_TYPE') }}"
+        MC_VERSION: "{{ lookup('env', 'MC_VERSION') }}"
+        EULA: "{{ lookup('env', 'EULA') }}"
+
+    - name: craftbukkit / spigot
+      block:
+        - name: set facts
+          set_fact:
+            MC_DOWNLOAD: "https://cdn.getbukkit.org/{{ MC_TYPE }}/{{ MC_TYPE }}-{{ MC_VERSION }}.jar"
+        - debug:
+            msg: "{{ item }}"
+          loop:
+            - "Server type is {{ MC_TYPE }}"
+            - "Server version is {{ MC_VERSION }}"
+            - "Downloading {{ MC_DOWNLOAD }}"
+        - name: Download
+          get_url:
+            url: "{{ MC_DOWNLOAD}}"
+            dest: "{{ MC_HOME }}/{{ MC_TYPE }}-{{ MC_VERSION }}.jar"
+            mode: '0770'
+        - name: Create symbolic link 
+          file:
+            src: "{{ MC_HOME }}/{{ MC_TYPE }}-{{ MC_VERSION }}.jar"
+            dest: "{{ MC_DATA }}/minecraft.jar"
+            state: link
+
+    - name: accept eula
+      lineinfile: 
+        path: "{{ MC_DATA }}/eula.txt"
+        line: "eula=true"
+        regexp: "eula=true"
+        create: yes
+      when: EULA
