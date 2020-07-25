@@ -5,6 +5,7 @@ ENV MC_VERSION="1.16.1"
 ENV MC_MEMORY_MIN="128M"
 ENV MC_MEMORY_MAX="512M"
 
+
 RUN apk add --no-cache -U \
   openssl \
   bash \
@@ -14,17 +15,19 @@ RUN apk add --no-cache -U \
   python \
   ansible
   
-RUN addgroup minecraft \
-  && adduser -G minecraft -h /minecraft -D minecraft \
-  && mkdir -p /minecraft-data  \
-  && chown minecraft:minecraft /minecraft-data /minecraft
+RUN mkdir -p /minecraft-data /minecraft-data/plugins
   
 WORKDIR /minecraft
 ADD ./start.sh start.sh
-ADD ./templates templates
-ADD server.properties.default server.properties
 ADD deploy.yml deploy.yml
+ADD ./templates templates
 RUN chmod 770 start.sh
+
+# download rcon
+ADD https://github.com/itzg/rcon-cli/releases/download/1.4.8/rcon-cli_1.4.8_linux_386.tar.gz rcon.tar.gz
+RUN tar xzf rcon.tar.gz
+RUN chmod u+x rcon-cli && mv rcon-cli /usr/bin/rcon-cli
+
 
 EXPOSE 25565
 

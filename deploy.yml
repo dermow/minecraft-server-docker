@@ -34,6 +34,16 @@
             dest: "{{ MC_DATA }}/minecraft.jar"
             state: link
 
+    - name: template server.properties
+      template:
+        src: "templates/server.properties.j2"
+        dest: /minecraft-data/server.properties
+
+    - name: template rcon config
+      template:
+        src: "templates/rcon.cli.yml.j2"
+        dest: /root/.rcon-cli.yaml
+
     - name: accept eula
       lineinfile: 
         path: "{{ MC_DATA }}/eula.txt"
