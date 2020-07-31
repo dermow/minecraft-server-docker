@@ -3,6 +3,9 @@ Simple Docker image to run a Minecraft Server. Currently supported forks are:
 - bukkit
 - spigot
 
+# Prerequisites
+- A password for rcon needs to be provided by environment 'MC_PROP_RCON_PASSWORD'
+
 ## Environments
 | ENV | Default | Description |
 |--|--|--|
@@ -12,6 +15,9 @@ Simple Docker image to run a Minecraft Server. Currently supported forks are:
 | MC_MEMORY_MAX | 512M | Maximum allocated memory. This represents the java Xmx parameter |
 | MC_PROP_MOTD | Minecraft Server on Docker| Minecraft Message of the Day |
 | MC_PROP_VIEW_DISTANCE | 12 | Server side maximum view distance |
+| MC_PROP_RCON_PASSWORD | none, REQUIRED | Password to connect to rcon |
+
+
 
 More config opitons, especially for entries in server.propertis will follow
 
