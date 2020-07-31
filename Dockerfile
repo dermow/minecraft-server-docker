@@ -4,7 +4,8 @@ ENV MC_TYPE="craftbukkit"
 ENV MC_VERSION="1.16.1"
 ENV MC_MEMORY_MIN="128M"
 ENV MC_MEMORY_MAX="512M"
-
+ENV MC_PROP_MOTD="Minecraft Server on Docker"
+ENV MC_PROP_VIEW_DISTANCE=12
 
 RUN apk add --no-cache -U \
   openssl \
