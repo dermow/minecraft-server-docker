@@ -26,8 +26,9 @@ RUN chmod 770 start.sh
 
 # download rcon
 ADD https://github.com/itzg/rcon-cli/releases/download/1.4.8/rcon-cli_1.4.8_linux_386.tar.gz rcon.tar.gz
-RUN tar xzf rcon.tar.gz
-RUN chmod u+x rcon-cli && mv rcon-cli /usr/bin/rcon-cli
+RUN tar xzf rcon.tar.gz \
+    && chmod u+x rcon-cli \
+    && mv rcon-cli /usr/bin/rcon-cli
 
 
 EXPOSE 25565
