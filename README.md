@@ -1,4 +1,19 @@
 # minecraft-server-docker
+Simple Docker image to run a Minecraft Server. Currently supported forks are: 
+- bukkit
+- spigot
+
+## Environments
+| ENV | Default | Description |
+|--|--|--|
+| MC_TYPE | craftbukkit | Which server binary to download and use. Currently supported: 'craftbukkit', 'spigot' |
+| MC_VERSION | 1.16.1 | Minecraft Server Relase to download and use |
+| MC_MEMORY_MIN | 128M | Initial allocated memory. This represents the java Xms parameter |
+| MC_MEMORY_MAX | 512M | Maximum allocated memory. This represents the java Xmx parameter |
+| MC_PROP_MOTD | Minecraft Server on Docker| Minecraft Message of the Day |
+| MC_PROP_VIEW_DISTANCE | 12 | Server side maximum view distance |
+
+More config opitons, especially for entries in server.propertis will follow
 
 ## docker compose
 ### Simple
