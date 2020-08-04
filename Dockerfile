@@ -6,6 +6,8 @@ ENV MC_MEMORY_MIN="128M"
 ENV MC_MEMORY_MAX="512M"
 ENV MC_PROP_MOTD="Minecraft Server on Docker"
 ENV MC_PROP_VIEW_DISTANCE=12
+ENV MC_PROP_GAMEMODE="survival"
+ENV MC_PROP_DIFFICULTY="easy"
 
 RUN apk add --no-cache -U \
   openssl \
