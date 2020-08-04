@@ -21,6 +21,11 @@ Simple Docker image to run a Minecraft Server. Currently supported forks are:
 
 More config opitons, especially for entries in server.propertis will follow
 
+## Run docker container
+```bash
+docker run -d -p 25565:25565 --name minecraft-server dermow/minecraft-server:latest
+```
+
 ## docker compose
 ### Simple
 ``` yaml
