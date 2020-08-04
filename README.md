@@ -16,6 +16,8 @@ Simple Docker image to run a Minecraft Server. Currently supported forks are:
 | MC_PROP_MOTD | Minecraft Server on Docker| Minecraft Message of the Day |
 | MC_PROP_VIEW_DISTANCE | 12 | Server side maximum view distance |
 | MC_PROP_RCON_PASSWORD | none, REQUIRED | Password to connect to rcon |
+| MC_PROP_GAMEMODE | survival | Default gamemode |
+| MC_PROP_DIFFICULTY | easy | Default difficulty |
 
 
 
