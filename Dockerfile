@@ -8,6 +8,8 @@ ENV MC_PROP_MOTD="Minecraft Server on Docker"
 ENV MC_PROP_VIEW_DISTANCE=12
 ENV MC_PROP_GAMEMODE="survival"
 ENV MC_PROP_DIFFICULTY="easy"
+ENV MC_PROP_QUERY_PORT="25565"
+ENV MC_PROP_ENFORCE_WHITELIST="true"
 
 RUN apk add --no-cache -U \
   openssl \
