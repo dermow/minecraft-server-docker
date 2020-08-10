@@ -1,11 +1,11 @@
 spawn-protection=16
 max-tick-time=60000
-query.port=25565
+query.port={{lookup('env', 'MC_PROP_QUERY_PORT')}}
 generator-settings=
 sync-chunk-writes=true
 force-gamemode=false
 allow-nether=true
-enforce-whitelist=false
+enforce-whitelist={{lookup('env', 'MC_PROP_ENFORCE_WHITELIST')}}
 gamemode={{lookup('env', 'MC_PROP_GAMEMODE')}}
 broadcast-console-to-ops=true
 enable-query=false
