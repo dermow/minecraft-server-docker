@@ -40,10 +40,10 @@
         dest: /minecraft/server.properties
         
     - name: Create symbolic link for server.properties
-        file:
-          src: "{{ MC_HOME }}/server.properties"
-          dest: "{{ MC_DATA }}/server.properties"
-          state: link
+      file:
+        src: "{{ MC_HOME }}/server.properties"
+        dest: "{{ MC_DATA }}/server.properties"
+        state: link
 
     - name: template rcon config
       template:

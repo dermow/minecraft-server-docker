@@ -10,6 +10,7 @@ ENV MC_PROP_GAMEMODE="survival"
 ENV MC_PROP_DIFFICULTY="easy"
 ENV MC_PROP_QUERY_PORT="25565"
 ENV MC_PROP_ENFORCE_WHITELIST="true"
+ENV MC_PROP_WHITELIST="false"
 
 RUN apk add --no-cache -U \
   openssl \
