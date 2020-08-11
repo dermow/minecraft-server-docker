@@ -60,3 +60,21 @@ services:
     volumes:
       - mcdata:/minecraft-data
 ```
+
+### Use spigot instead of craftbukkit
+``` yaml
+version: '3.0'
+volumes:
+  mcdata:
+services: 
+  mcsrv:
+    image: dermow/minecraft-server:latest
+    ports:
+      - 25656:25656
+    environment:
+      MC_PROP_RCON_PASSWORD: rcon1337
+      MC_TYPE: spigot
+      EULA: "true"
+    volumes:
+      - mcdata:/minecraft-data
+```
