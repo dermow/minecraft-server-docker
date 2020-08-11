@@ -18,6 +18,8 @@ Simple Docker image to run a Minecraft Server. Currently supported forks are:
 | MC_PROP_RCON_PASSWORD | none, REQUIRED | Password to connect to rcon |
 | MC_PROP_GAMEMODE | survival | Default gamemode |
 | MC_PROP_DIFFICULTY | easy | Default difficulty |
+| MC_PROP_WHITELIST | false | Set to true to turn whitelist per default on |
+| MC_PROP_ENFORCE_WHITELIST | false | Set to true to enforce whitelist changes without server restart |
 
 
 
