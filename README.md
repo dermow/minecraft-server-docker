@@ -78,3 +78,13 @@ services:
     volumes:
       - mcdata:/minecraft-data
 ```
+
+### Interact with server using 'rcon-cli'
+``` bash
+# syntax
+docker container exec <container_name> rcon-cli <command>
+
+#example: print message
+docker container exec my_minecraft_container rcon-cli say 'hello world'
+
+```
