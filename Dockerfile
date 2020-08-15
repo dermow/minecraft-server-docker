@@ -1,5 +1,6 @@
 FROM openjdk:8u212-jre-alpine
 
+# Define default values:
 ENV MC_TYPE="craftbukkit"
 ENV MC_VERSION="1.16.1"
 ENV MC_MEMORY_MIN="128M"
