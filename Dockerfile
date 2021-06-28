@@ -1,4 +1,4 @@
-FROM openjdk:16
+FROM openjdk:16-jdk-alpine
 
 # Define default values:
 ENV MC_TYPE="craftbukkit"
@@ -19,7 +19,7 @@ RUN apk add --no-cache -U \
   curl iputils wget \
   git \
   sudo \
-  python \
+  python3 \
   ansible
   
 RUN mkdir -p /minecraft-data /minecraft-data/plugins
