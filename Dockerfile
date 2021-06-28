@@ -1,4 +1,4 @@
-FROM openjdk:8u212-jre-alpine
+FROM openjdk:8u292-jre-alpine
 
 # Define default values:
 ENV MC_TYPE="craftbukkit"
