@@ -16,7 +16,8 @@
       block:
         - name: set facts
           set_fact:
-            MC_DOWNLOAD: "https://cdn.getbukkit.org/{{ MC_TYPE }}/{{ MC_TYPE }}-{{ MC_VERSION }}.jar"
+            MC_DOWNLOAD: "https://download.getbukkit.org/{{ MC_TYPE }}/{{ MC_TYPE }}-{{ MC_VERSION }}.jar
+            #MC_DOWNLOAD: "https://cdn.getbukkit.org/{{ MC_TYPE }}/{{ MC_TYPE }}-{{ MC_VERSION }}.jar"
         - debug:
             msg: "{{ item }}"
           loop:
